@@ -6,17 +6,15 @@ using UnityEngine.UIElements;
 public class Delivery : MonoBehaviour
 {
     [SerializeField] Color32 hasPackageColor = new Color32 (1, 1, 1, 1); // arabamýzýn rengini deðiþtirmek istiyoruz.
-    [SerializeField] Color32 noPackageColor = new Color32(1, 0, 1, 1);
+    [SerializeField] Color32 noPackageColor = new Color32(1, 1, 1, 1);
     [SerializeField] float destroyDelay = 0.5f;
     bool hasPackage;
-    Driver driver;// yeniiiiii
 
     SpriteRenderer spriteRenderer; // unitydeki Sprite Renderer i cagýrmak istiyoruz ve adýný spriteRenderer koyuyoruz
     
     void Start()
     {
         spriteRenderer = GetComponent<SpriteRenderer>(); // oyun basladýgýnda sprite renderera eriþmek istiyoruz.
-        driver = FindAnyObjectByType<Driver>();// yeniiiiiii
         
     }
     public void OnCollisionEnter2D(Collision2D other) // collison2D other collisionlardan (eklediðimiz çarpýþma özelliklerinden) herhangibirini bir özelliðini vurgulamada kullanýlýr.
@@ -29,9 +27,9 @@ public class Delivery : MonoBehaviour
         if(other.tag == "Package" && !hasPackage) // package true ve haspackage false ise if çalýþýr
         {
             Debug.Log("package pick up");
-            Destroy(other.gameObject, destroyDelay);
             hasPackage = true;
             spriteRenderer.color = hasPackageColor;
+            Destroy(other.gameObject, destroyDelay);
 
         }
 

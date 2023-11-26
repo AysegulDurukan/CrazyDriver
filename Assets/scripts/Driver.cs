@@ -1,6 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.U2D.Animation;
+using UnityEditor.U2D;
 using UnityEngine;
 
 public class Driver : MonoBehaviour
@@ -11,11 +11,6 @@ public class Driver : MonoBehaviour
     [SerializeField] public float boostSpeed = 15f;
 
  
-   
-    void Start()
-    {
-        
-    }
 
     void Update()
     {
