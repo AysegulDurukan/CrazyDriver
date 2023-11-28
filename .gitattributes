@@ -1,4 +1,4 @@
 # Force C# for Unity scripts
 *.cs linguist-language=CSharp
-
+*.wlt linguist-language=CSharp
 *.meta linguist-detectable=false
